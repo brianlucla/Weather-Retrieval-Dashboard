@@ -4,32 +4,90 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
   <title>Document</title>
 </head>
 <body>
-  <header>
+  <header id="heada">
     <h1>Weather Dashboard</h1>
   </header>
 
-  <main>
-    <section id="left-cont">
-      <h2>
-        Search for a city:
-      </h2>
-      <form type="search" id="city-search">
-        
-      </form>
-
-    </section>
-    <section id="right-cont">
-      <section id="curr-weather">
-
-      </section>
-      <section id="forecast">
-
-      </section>
-    </section>
-  </main>
+  <section class="vh-100">
+    <div class="container py-3 h-50">
   
+      <div class="row d-flex justify-content-center h-100">
+        <div class="col-md-8 col-lg-6 col-xl-4">
+  
+          <h3 class="mb-4 pb-2 fw-normal">Check the weather forecast</h3>
+  
+          <div class="input-group rounded mb-3">
+            <input type="search" class="form-control rounded" placeholder="City" aria-label="Search"
+              aria-describedby="search-addon" autocomplete="on" id="weather-search"/>
+            <a href="#!" type="button" id="button-element">
+              <span class="input-group-text border-0 fw-bold" id="search-addon">
+                Check!
+              </span>
+            </a>
+          </div>
+  
+          <div class="mb-4 pb-2">
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"
+                checked />
+              <label class="form-check-label" for="inlineRadio1">Celsius</label>
+            </div>
+  
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" />
+              <label class="form-check-label" for="inlineRadio2">Farenheit</label>
+            </div>
+          </div>
+  
+        </div>
+        <div class="col-md-8 col-lg-6 col-xl-4">
+          <h3 class="mb-4 pb-2 fw-normal">Previously Searched Cities</h3>
+          <ul id="city-list">
+
+          </ul>
+        </div>
+      </div>
+  
+    </div>
+    <section id="bottom-container" class="d-flex flex-column justify-content-center h-100 w-100">
+      <div class="card shadow-0 border">
+        <div class="card-body p-5">
+          <h4 class="mb-1 sfw-normal" id="curr-city"></h4>
+          <p class="mb-2">Current temperature: <strong id="curr-temp"></strong></p>
+          <p class="mb-2">Wind Speed: <strong id="curr-wind"></strong></p>
+          <p class="mb-2">Humidity: <strong id="curr-humidity"></strong></p>
+      
+        </div>
+      </div>
+      <section id="forecast" class="h-100">
+        <h3 class="mb-4 pb-2 fw-normal" id="forecast-header">5-Day Forecast</h3>
+        <div id="card-container">
+          <card></card>
+          <card></card>
+          <card></card>
+          <card></card>
+          <card></card>
+        </div>
+      </section>
+  </section>
+  
+  </section>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.4/dayjs.min.js"
+    integrity="sha512-0fcCRl828lBlrSCa8QJY51mtNqTcHxabaXVLPgw/jPA5Nutujh6CbTdDgRzl9aSPYW/uuE7c4SffFUQFBAy6lg=="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.4/plugin/utc.min.js"
+    integrity="sha512-m00bfmYnAl3plEBlQfeQUhw/U2uvmw29V2+jxSWpAjankMWS+zAsjezbKWDEJNXqWq9o9qQZSOiA2RKDpa4D5w=="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.4/plugin/timezone.min.js"
+    integrity="sha512-pslqxxHAYPCxaSeFSmXXxDkLejD5dbFVC66aiVq0z4v7VTJBU+wqcG1OpNh4p3MjS2D6NCwz/H2QmSc7dXxryg=="
+    crossorigin="anonymous"></script>
+  <script src="script.js"></script>
 </body>
 </html>
